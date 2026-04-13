@@ -7,6 +7,7 @@ import Homepage from './Pages/Homepage';
 import ErrorPage from './Pages/ErrorPage';
 import FriendsList from './Components/FriendsList/FriendsList';
 import Banner from './Components/Banner/Banner';
+import FriendDetails from './Components/Frienddetails/FriendDetails';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/details",
-    element: <h2>details</h2>
+    element: <FriendDetails></FriendDetails>,
   }
     ],
     errorElement:<ErrorPage></ErrorPage>
