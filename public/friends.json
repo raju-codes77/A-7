@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://randomuser.me/api/portraits/men/11.jpg",
+    "email": "john.doe@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": "college", 
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Williams",
+    "picture": "https://randomuser.me/api/portraits/women/21.jpg",
+    "email": "sarah.williams@example.com",
+    "days_since_contact": 5,
+    "status": "on_track",
+    "tags": "work", 
+    "bio": "Work colleague from marketing team.",
+    "goal": 10,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 3,
+    "name": "Michael Brown",
+    "picture": "https://randomuser.me/api/portraits/men/31.jpg",
+    "email": "michael.brown@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": "fitness buddy",
+    "bio": "Gym partner. Weekend workouts together.",
+    "goal": 7,
+    "next_due_date": "2025-07-15"
+  },
+  {
+    "id": 4,
+    "name": "Emily Johnson",
+    "picture": "https://randomuser.me/api/portraits/women/41.jpg",
+    "email": "emily.johnson@example.com",
+    "days_since_contact": 2,
+    "status": "on_track",
+    "tags": "family", 
+    "bio": "Cousin. Regular family meetups.",
+    "goal": 14,
+    "next_due_date": "2025-07-30"
+  },
+  {
+    "id": 5,
+    "name": "David Lee",
+    "picture": "https://randomuser.me/api/portraits/men/51.jpg",
+    "email": "david.lee@example.com",
+    "days_since_contact": 9,
+    "status": "due_soon",
+    "tags": "school", 
+    "bio": "School friend. Catch up occasionally.",
+    "goal": 10,
+    "next_due_date": "2025-07-22"
+  },
+  {
+    "id": 6,
+    "name": "Sophia Martinez",
+    "picture": "https://randomuser.me/api/portraits/women/61.jpg",
+    "email": "sophia.martinez@example.com",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": "travel", 
+    "bio": "Travel buddy. Love exploring new places.",
+    "goal": 12,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 7,
+    "name": "James Anderson",
+    "picture": "https://randomuser.me/api/portraits/men/71.jpg",
+    "email": "james.anderson@example.com",
+    "days_since_contact": 3,
+    "status": "on_track",
+    "tags": "gaming", 
+    "bio": "Online gaming friend.",
+    "goal": 7,
+    "next_due_date": "2025-07-28"
+  },
+  {
+    "id": 8,
+    "name": "Olivia Taylor",
+    "picture": "https://randomuser.me/api/portraits/women/81.jpg",
+    "email": "olivia.taylor@example.com",
+    "days_since_contact": 11,
+    "status": "due_soon",
+    "tags": "neighbor", 
+    "bio": "Friendly neighbor. Regular chats.",
+    "goal": 14,
+    "next_due_date": "2025-07-21"
+  }
+]
