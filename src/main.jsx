@@ -8,6 +8,9 @@ import ErrorPage from './Pages/ErrorPage';
 import FriendsList from './Components/FriendsList/FriendsList';
 import Banner from './Components/Banner/Banner';
 import FriendDetails from './Components/Frienddetails/FriendDetails';
+import { ToastContainer } from 'react-toastify';
+import FriendsActivity from './Context/FriendsActivity';
+import Timeline from './Components/Timeline/Timeline';
 
 
 const router = createBrowserRouter([
@@ -21,7 +24,7 @@ const router = createBrowserRouter([
       },
   {
     path:"/timeline",
-    element: <h2>Apps</h2>
+    element: <Timeline></Timeline>
   },
   {
     path:"/stats",
@@ -40,6 +43,14 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     
-    <RouterProvider router={router} />
+    <FriendsActivity>
+
+       <RouterProvider router={router} />
+       <ToastContainer position="top-center" />
+
+    </FriendsActivity>
+
+   
+    
   </StrictMode>,
 )

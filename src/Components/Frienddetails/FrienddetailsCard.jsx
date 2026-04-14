@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { RiDeleteBin5Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { IoArchiveOutline, IoVideocamOutline } from 'react-icons/io5';
 import { FiPhoneCall } from 'react-icons/fi';
 import { MdOutlineTextsms } from 'react-icons/md';
+import { toast } from 'react-toastify';
+import { FriendsActivityContext } from '../../Context/FriendsContext';
 
 const FrienddetailsCard = ({expectedFriend}) => {
      const friendStatus={
@@ -10,6 +12,26 @@ const FrienddetailsCard = ({expectedFriend}) => {
             due_soon:"bg-yellow-500 rounded-full px-2 text-white",
             on_track:"bg-[#244d3f] rounded-full px-2 text-white"
     
+        }
+
+        // context data access
+        const {audio,setAudio,video,setVideo,text,setText}=useContext(FriendsActivityContext);
+
+        // calling function handle
+
+        const handleCall=(friend,type)=>{
+                if(type==="Text"){
+                    toast.success(`Succesfully Sent ${type}  to ${friend?.name}`);
+                    setText([...text,friend]);
+                }
+                else if(type ==="Audio"){
+                    toast(`${type} Calling ${friend.name}`);
+                    setAudio([...audio,friend])
+                }
+                else{
+                    toast(`${type} Calling ${friend.name}`);
+                    setVideo([...video,friend])
+                }
         }
     return (
         <div className='w-3/4 mx-auto my-10'>
@@ -78,21 +100,21 @@ const FrienddetailsCard = ({expectedFriend}) => {
                </div>
 
                 {/* Snooze archieve and delete */}
-                <div className='min-h-[30px] col-span-2  bg--400 space-y-4'> 
+                <div className='min-h-[30px] col-span-2   space-y-3'> 
                     
-                    <div className='bg-base-100  p-2 shadow-sm cursor-pointer hover:bg-gray-200 active:scale-95 '> 
+                    <div className='bg-base-100  p-2 shadow-sm border border-gray-200 rounded cursor-pointer hover:bg-gray-200 active:scale-95 '> 
                         
                         <p className='font-semibold text-center flex items-center gap-1 justify-center'><RiNotificationSnoozeLine /> Snooze 2 Weeks</p>
                         
                     </div>
 
-                    <div className='bg-base-100  p-2 shadow-sm cursor-pointer hover:bg-gray-200 active:scale-95 '> 
+                    <div className='bg-base-100  p-2 shadow-sm border border-gray-200 rounded cursor-pointer hover:bg-gray-200 active:scale-95 '> 
                         
                         <p className='font-semibold text-center flex items-center gap-1 justify-center'><IoArchiveOutline /> Archive</p>
                         
                     </div>
 
-                    <div className='bg-base-100  p-2 shadow-sm cursor-pointer hover:bg-gray-200 active:scale-95 '> 
+                    <div className='bg-base-100  p-2 shadow-sm border border-gray-200 rounded cursor-pointer hover:bg-gray-200 active:scale-95 '> 
                         
                         <p className='font-semibold text-center text-red-600 flex items-center gap-1 justify-center'><RiDeleteBin5Line /> Delete</p>
                         
@@ -105,21 +127,21 @@ const FrienddetailsCard = ({expectedFriend}) => {
                     <h2 className='text-[#244d3f] font-semibold'>Quick Check-In</h2>
                     <div className='grid md:grid-cols-3'>
                             <div className="card  bg-base-100 card-xs p-5 ">
-                                <button  className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95  ">
+                                <button onClick={()=>handleCall(expectedFriend,"Audio")}  className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95  ">
                                     <h2 className="font-bold text-2xl text-[#244d3f] text-center flex justify-center"><FiPhoneCall /></h2>
                                     <p className='text-center text-xl  text-gray-500'>Call</p>
                                     
                                 </button>
                                 </div>
                             <div className="card  bg-base-100 card-xs p-5 ">
-                                <button  className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95  ">
+                                <button onClick={()=>handleCall(expectedFriend,"Text")}  className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95  ">
                                     <h2 className="font-bold text-2xl text-[#244d3f] text-center flex justify-center"><MdOutlineTextsms /></h2>
                                     <p className='text-center text-xl  text-gray-500'>Text</p>
                                     
                                 </button>
                                 </div>
                             <div className="card   card-xs p-5 ">
-                                <button  className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95 ">
+                                <button onClick={()=>handleCall(expectedFriend,"Video")} className="card-body bg-gray-100 rounded cursor-pointer hover:bg-gray-200 active:scale-95 ">
                                     <h2 className="font-bold text-2xl text-[#244d3f] text-center flex justify-center"><IoVideocamOutline /></h2>
                                     <p className='text-center text-xl  text-gray-500'>Video</p>
                                     
