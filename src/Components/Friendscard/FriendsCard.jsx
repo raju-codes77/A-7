@@ -9,7 +9,7 @@ const FriendsCard = ({friend}) => {
 
     }
     return (
-        <Link to={"/details"}>
+        <Link to={`/details/${friend.id}`}>
             <div className="card bg-base-100 w-56 shadow-sm">
   <figure className="px-10 pt-10">
     <img
@@ -24,7 +24,7 @@ const FriendsCard = ({friend}) => {
     <p className={friendStatus[friend.status]}>{friend.status}</p>
     
   </div>
-</div>
+            </div>
         </Link>
     );
 };

@@ -1,10 +1,11 @@
-import React, { use } from 'react';
+import React, {} from 'react';
 import FriendsCard from '../Friendscard/FriendsCard';
+import useFriends from '../hooks/useFriends';
 
-const friendsList=fetch('/friends.json').then(res=>res.json());
+// const friendsList=fetch('/friends.json').then(res=>res.json());
 
 const FriendsList = () => {
-    const friends=use(friendsList);
+    const {friends}=useFriends();
     return (
         <div className='w-3/4 mx-auto mt-8'>
             <h2 className='font-bold my-5'>Your Friends</h2>
