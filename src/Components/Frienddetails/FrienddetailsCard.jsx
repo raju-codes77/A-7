@@ -15,7 +15,7 @@ const FrienddetailsCard = ({expectedFriend}) => {
         }
 
         // context data access
-        const {audio,setAudio,video,setVideo,text,setText}=useContext(FriendsActivityContext);
+        const {setAllActivity,allActivity,audio,setAudio,video,setVideo,text,setText}=useContext(FriendsActivityContext);
 
         // calling function handle
 
@@ -23,14 +23,17 @@ const FrienddetailsCard = ({expectedFriend}) => {
                 if(type==="Text"){
                     toast.success(`Succesfully Sent ${type}  to ${friend?.name}`);
                     setText([...text,friend]);
+                    setAllActivity([...allActivity,{...friend,type:"Text"}]);
                 }
                 else if(type ==="Audio"){
                     toast(`${type} Calling ${friend.name}`);
                     setAudio([...audio,friend])
+                    setAllActivity([...allActivity,{...friend,type:"Audio"}]);
                 }
                 else{
                     toast(`${type} Calling ${friend.name}`);
                     setVideo([...video,friend])
+                    setAllActivity([...allActivity,{...friend,type:"Video"}]);
                 }
         }
     return (

@@ -8,7 +8,8 @@ const FriendsActivity = ({children}) => {
     const [audio,setAudio]=useState([]);
     const [video,setVideo]=useState([]);
     const [text,setText]=useState([]);
-    return <FriendsActivityContext.Provider value={{audio,setAudio,video,setVideo,text,setText}}>{children}</FriendsActivityContext.Provider>;
+    const [allActivity,setAllActivity]=useState([]);
+    return <FriendsActivityContext.Provider value={{allActivity,setAllActivity,audio,setAudio,video,setVideo,text,setText}}>{children}</FriendsActivityContext.Provider>;
 };
 
 export default FriendsActivity;

@@ -11,6 +11,7 @@ import FriendDetails from './Components/Frienddetails/FriendDetails';
 import { ToastContainer } from 'react-toastify';
 import FriendsActivity from './Context/FriendsActivity';
 import Timeline from './Components/Timeline/Timeline';
+import Chart from './Components/Chart/Chart';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/stats",
-    element: <h2>Stats</h2>
+    element:<Chart></Chart> 
   },
   {
     path:"/details/:id",

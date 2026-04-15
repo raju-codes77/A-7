@@ -3,16 +3,11 @@ import { FriendsActivityContext } from '../../Context/FriendsContext';
 import TimelineCard from './TimelineCard';
 
 const TimeLineCards = () => {
-    const {audio,video,text}=useContext(FriendsActivityContext);
-    const allcards=[
-        ...audio.map(item=>({...item,type:"Audio"})),
-        ...video.map(item=>({...item,type:"Video"})),
-        ...text.map(item=>({...item,type:"Text"})),
-    ]
+    const {allActivity,audio,video,text}=useContext(FriendsActivityContext);
     return (
-        <div className='space-y-3'>
+        <div className='space-y-3 flex flex-col-reverse'>
             {
-                allcards.map((card,index)=><TimelineCard key={index} card={card}></TimelineCard>)
+                allActivity.map((card,index)=><TimelineCard key={index} card={card}></TimelineCard>)
             }
         </div>
     );
