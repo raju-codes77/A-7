@@ -18,7 +18,7 @@ const TimelineCard = ({card}) => {
                 </p>
                 <div>
                     <h2><span className='font-bold'>{card.type} </span> with {card.name}</h2>
-                    <p className='text-gray-400'>{card.next_due_date}</p>
+                    <p className='text-gray-400'>{card.time}</p>
                 </div>
             </div>
         </div>

@@ -23,17 +23,17 @@ const FrienddetailsCard = ({expectedFriend}) => {
                 if(type==="Text"){
                     toast.success(`Succesfully Sent ${type}  to ${friend?.name}`);
                     setText([...text,friend]);
-                    setAllActivity([...allActivity,{...friend,type:"Text"}]);
+                    setAllActivity([...allActivity,{...friend,type:"Text",time:new Date().toLocaleString()}]);
                 }
                 else if(type ==="Audio"){
                     toast(`${type} Calling ${friend.name}`);
                     setAudio([...audio,friend])
-                    setAllActivity([...allActivity,{...friend,type:"Audio"}]);
+                    setAllActivity([...allActivity,{...friend,type:"Audio",time:new Date().toLocaleString()}]);
                 }
                 else{
                     toast(`${type} Calling ${friend.name}`);
                     setVideo([...video,friend])
-                    setAllActivity([...allActivity,{...friend,type:"Video"}]);
+                    setAllActivity([...allActivity,{...friend,type:"Video",time:new Date().toLocaleString()}]);
                 }
         }
     return (

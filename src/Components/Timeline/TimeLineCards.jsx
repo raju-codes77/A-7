@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { FriendsActivityContext } from '../../Context/FriendsContext';
 import TimelineCard from './TimelineCard';
 
-const TimeLineCards = () => {
+const TimeLineCards = ({filter}) => {
     const {allActivity,audio,video,text}=useContext(FriendsActivityContext);
+    const filterData=filter==="all"?allActivity:allActivity.filter(item=>item.type===filter);
     return (
-        <div className='space-y-3 flex flex-col-reverse'>
+        <div className='space-y-3 pb-15 pt-2 flex flex-col-reverse'>
             {
-                allActivity.map((card,index)=><TimelineCard key={index} card={card}></TimelineCard>)
+                filterData.map((card,index)=><TimelineCard key={index} card={card}></TimelineCard>)
             }
         </div>
     );
