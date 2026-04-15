@@ -8,7 +8,13 @@ import { FriendsActivityContext } from '../../Context/FriendsContext';
 const FriendsList = () => {
     const contextData=useContext(FriendsActivityContext);
     console.log(contextData,"context data")
-    const {friends}=useFriends();
+    const {friends,loading}=useFriends();
+    if(loading){
+        return <div className='flex justify-center my-5'>
+            <span className="loading loading-spinner loading-xl"></span>
+
+        </div>
+    }
     return (
         <div className='w-3/4 mx-auto mt-8'>
             <h2 className='font-bold my-5'>Your Friends</h2>

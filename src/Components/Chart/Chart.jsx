@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Pie, PieChart } from 'recharts';
+import { Pie, PieChart, Tooltip } from 'recharts';
 import { FriendsActivityContext } from '../../Context/FriendsContext';
 
 const Chart = () => {
@@ -29,8 +29,8 @@ const Chart = () => {
         dataKey="value"
         isAnimationActive={true}
       />
-      
-    </PieChart>
+      <Tooltip></Tooltip>
+        </PieChart>
                 </div>
                 <div className='mt-3'>
                     <ul className='flex justify-center gap-3'>
